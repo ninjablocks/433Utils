@@ -8,7 +8,8 @@ It consists of two main sections- Arduino sketches and Raspberry Pi command line
 
 1. An Arduino (two is ideal)
 2. A Raspberry Pi
-3. the git commandline tool, on both your Arduino IDE machine and your RPi
+3. The git commandline tool, on both your Arduino IDE machine and your RPi
+4. RF 433MHz modules; a transmitter and receiver
 
 ## Installation
 

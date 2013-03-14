@@ -34,7 +34,7 @@ int max_pan = 170;
 int min_tilt = 0;
 int max_tilt = 160;
 
-int del = 100;
+int del = 500;
 
 
 void setup() {
@@ -49,7 +49,7 @@ void loop() {
 
   if (mySwitch.available()) {
 
-    int value = mySwitch.getReceivedValue();
+    long value = mySwitch.getReceivedValue();
 
     if (value == 0) {
       Serial.print("Unknown encoding");
