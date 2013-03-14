@@ -16,8 +16,8 @@ It consists of two main sections- Arduino sketches and Raspberry Pi command line
 
 Place the Sketches in your normal Arduino Sketches location.  Install any required libraries:
 
-1. TODO servo lib url
-2. [rc_switch](http://code.google.com/p/rc-switch/)
+1. Servo motor library (Should be included in the Arduino IDE)
+2. _Arduino_ [rc_switch](http://code.google.com/p/rc-switch/) library
 
 ### RPi\_utils
 
