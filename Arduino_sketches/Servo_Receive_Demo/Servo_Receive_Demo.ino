@@ -10,12 +10,12 @@
 
 // Define some codes that will be understood by the receiver.  These should not collide with other codes!
 // Practically speaking, they shouldn't collide with the codes of devices in your vicinity.
-// Ensure the codes match in the receiver sketch/program
-#define CODE_Up 500000
-#define CODE_Down 500001
-#define CODE_Left 500002
-#define CODE_Right 500003
-#define CODE_Home 500004
+
+#define CODE_Up 500000      // HEX 7A120
+#define CODE_Down 500001    // HEX 7A121
+#define CODE_Left 500002    // HEX 7A122
+#define CODE_Right 500003   // HEX 7A123
+#define CODE_Home 500004    // HEX 7A124
 
 #define ENABLE_Sniffer true
 
@@ -110,6 +110,5 @@ void loop() {
   panServo.write(pan);           
   delay(del);                     
 }
-
 
 
