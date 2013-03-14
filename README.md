@@ -4,9 +4,30 @@
 
 It consists of two main sections- Arduino sketches and Raspberry Pi command line utilities.  You'll find those in appropriately named folders.
 
+## Requirements
+
+1. An Arduino (two is ideal)
+2. A Raspberry Pi
+3. the git commandline tool, on both your Arduino IDE machine and your RPi
+
 ## Installation
 
-First (As per the original rc_switch distribution) you have to install the [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
+### Arduino Sketches
+
+Place the Sketches in your normal Arduino Sketches location.  Install any required libraries:
+
+1. TODO servo lib url
+2. [rc_switch](http://code.google.com/p/rc-switch/)
+
+### RPi\_utils
+
+From your RPi, clone this archive:
+
+1. git clone git@github.com:justy/433Kit.git
+
+2. cd i433Kit/RPi\_utils
+
+3. (As per the original rc_switch distribution) you have to install the [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
 After that you can compile the example programs by executing *make*. 
 
 ## Usage
