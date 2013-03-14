@@ -10,7 +10,7 @@
 
 #include <RCSwitch.h>
 
-#define CODE_Button 500000    // Use whatever number you saw in the RF Sniffer Sketch
+#define CODE_Button 4575536    // Use whatever number you saw in the RF Sniffer Sketch
 
 RCSwitch mySwitch = RCSwitch();
 
