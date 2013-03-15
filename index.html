@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>433utils by justy</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">433utils</h1>
+        <p class="header">433Kit is a collection of code and documentation designed to assist you in the connection and usage of RF 433MHz transmit and receive modules to/with your Arduino and Rapberry Pi.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/justy/433Utils/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/justy/433Utils/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/justy/433Utils">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/justy">justy</a></p>
+
+
+      </header>
+      <section>
+        <h1>About 433Kit</h1>
+
+<p>433Kit is a collection of code and documentation designed to assist you in the connection and usage of RF 433MHz transmit and receive modules to/with your Arduino and Rapberry Pi.</p>
+
+<p>It consists of two main sections- Arduino sketches and Raspberry Pi command line utilities.  You'll find those in appropriately named folders.</p>
+
+<h2>Requirements</h2>
+
+<ol>
+<li>An Arduino (two is ideal)</li>
+<li>A Raspberry Pi</li>
+<li>The git commandline tool, on both your Arduino IDE machine and your RPi</li>
+<li>RF 433MHz modules; a transmitter and receiver</li>
+<li>A Ninja Block and account</li>
+</ol><h2>Installation</h2>
+
+<h3>Arduino_Sketches</h3>
+
+<p>Place the Sketches in your normal Arduino Sketches location.  Install any required libraries:</p>
+
+<ol>
+<li>Servo motor library (Should be included in the Arduino IDE)</li>
+<li>
+<em>Arduino</em> <a href="http://code.google.com/p/rc-switch/">rc_switch</a> library</li>
+</ol><h3>RPi_utils</h3>
+
+<p>From your RPi, clone this archive:</p>
+
+<ol>
+<li><p>git clone git://github.com/justy/433Kit.git</p></li>
+<li><p>cd i433Kit/RPi_utils</p></li>
+<li><p>(As per the original rc_switch distribution) Follow the instructions to install the  <a href="https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/">wiringpi</a> library.
+After that you can compile the example programs by executing <em>make</em>. </p></li>
+</ol><h2>Usage</h2>
+
+<h3>send</h3>
+
+<p><code>sudo ./send systemCode unitCode command</code></p>
+
+<p>This command is unaltered from the original rc_switch distribution.</p>
+
+<h3>codesend</h3>
+
+<p><code>sudo ./codesend decimalcode</code></p>
+
+<p>This command uses a single Ninja Blocks compatible decimal code.  Sniff out codes using the RF_Sniffer.ino Arduino sketch, included in this distribution.</p>
+
+<p>You can use codesend to control the wireless servo on your Arduino.
+(The sketch is Servo_Receive_Demo.ino)</p>
+
+<p>I've implemented the most bare-bones of controls here.  Try:</p>
+
+<p><code>sudo ./codesend 500000 # to move the servo up</code></p>
+
+<p><code>sudo ./codesend 500001 # to move the servo down</code></p>
+
+<p><code>sudo ./codesend 500002 # to move the servo left</code></p>
+
+<p><code>sudo ./codesend 500003 # to move the servo right</code></p>
+
+<p><code>sudo ./codesend 500004 # to move the servo home</code></p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
