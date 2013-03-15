@@ -10,10 +10,11 @@ It consists of two main sections- Arduino sketches and Raspberry Pi command line
 2. A Raspberry Pi
 3. The git commandline tool, on both your Arduino IDE machine and your RPi
 4. RF 433MHz modules; a transmitter and receiver
+5. A Ninja Block and account
 
 ## Installation
 
-### Arduino Sketches
+### Arduino\_Sketches
 
 Place the Sketches in your normal Arduino Sketches location.  Install any required libraries:
 
