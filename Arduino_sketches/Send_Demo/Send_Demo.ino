@@ -10,12 +10,12 @@
 
 #include <RCSwitch.h>
 
-#define CODE_Button 4575536    // Use whatever number you saw in the RF Sniffer Sketch
+#define CODE_Button 4575536  // Use whatever number you saw in the RF Sniffer Sketch
     
     
-#define CODE_PotLow  100000
-#define CODE_PotMid  100001
-#define CODE_PotHigh 100002
+#define CODE_PotLow  100000  // HEX 186A0
+#define CODE_PotMid  100001  // HEX 186A1
+#define CODE_PotHigh 100002  // HEX 186A2
     
 #define SETTING_UsePot false  // Make this true for Step Four of the tutorial.
 
