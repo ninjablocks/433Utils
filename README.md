@@ -25,7 +25,7 @@ Place the Sketches in your normal Arduino Sketches location.  Install any requir
 
 From your RPi, clone this archive:
 
-1. git clone git://github.com/justy/433Kit.git
+1. git clone git://github.com/justy/433Utils.git
 
 2. cd i433Kit/RPi\_utils
 
