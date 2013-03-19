@@ -42,7 +42,7 @@ void setup() {
   // ********* IMPORTANT ***********
   mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2
   panServo.attach(9);  // attaches the servo on pin 9 to the servo object 
-  tiltServo.attach(13);
+  tiltServo.attach(3);
 }
 
 void loop() {
