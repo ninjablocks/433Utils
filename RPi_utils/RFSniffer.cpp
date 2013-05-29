@@ -16,12 +16,20 @@ RCSwitch mySwitch;
 
 
 int main(int argc, char *argv[]) {
+  
+     // This pin is not the first pin on the RPi GPIO header!
+     // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
+     // for more information.
+     int PIN = 2;
+     
+     if(wiringPiSetup() == -1)
+       return 0;
 
      mySwitch = RCSwitch();
-     mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2
+     mySwitch.enableReceive(PIN);  // Receiver on inerrupt 0 => that is pin #2
      
     
-     for(int i=0; i<100; i++) {
+     while(1) {
   
       if (mySwitch.available()) {
     
