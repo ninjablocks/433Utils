@@ -1,4 +1,4 @@
-# About 433Kit
+# About 433Utils
 
 433Kit is a collection of code and documentation designed to assist you in the connection and usage of RF 433MHz transmit and receive modules to/with your Arduino and Rapberry Pi.
 
