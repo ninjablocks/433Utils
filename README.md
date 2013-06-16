@@ -60,4 +60,6 @@ I've implemented the most bare-bones of controls here.  Try:
 
 ```sudo ./codesend 500004 # to move the servo home```
 
-### 
+## Issues
+
+Due to limitiations in the implementation of interrupt-driven routines in the underlying RCSwitch library, it is currently not possible to use both the send and receive functionality within the one program.  
