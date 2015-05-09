@@ -27,7 +27,7 @@ From your RPi, clone this archive:
 
 1. git clone git://github.com/ninjablocks/433Utils.git
 
-2. cd i433Kit/RPi\_utils
+2. cd 433Kit/RPi\_utils
 
 3. (As per the original rc_switch distribution) Follow the instructions to install the  [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
 After that you can compile the example programs by executing *make*. 
