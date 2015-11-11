@@ -1,7 +1,7 @@
 /*
   RF_Sniffer
   
-  Hacked from http://code.google.com/p/rc-switch/
+  Hacked from https://github.com/sui77/rc-switch
   
   by @justy to provide a handy RF code sniffer
 */
@@ -11,7 +11,7 @@ RCSwitch mySwitch = RCSwitch();
 
 void setup() {
   Serial.begin(9600);
-  mySwitch.enableReceive(0);  // Receiver on inerrupt 0 => that is pin #2
+  mySwitch.enableReceive(0);  // Receiver on interrupt 0 => that is pin #2
 }
 
 void loop() {
