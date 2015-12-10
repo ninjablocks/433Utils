@@ -11,7 +11,7 @@
  (Use RF_Sniffer.ino to check that RF signals are being produced by the RPi's transmitter)
  */
 
-#include "RCSwitch.h"
+#include "../rc-switch/RCSwitch.h"
 #include <stdlib.h>
 #include <stdio.h>
      
