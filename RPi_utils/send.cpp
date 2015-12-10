@@ -1,6 +1,8 @@
 /*
- Usage: ./send <systemCode> <unitCode> <command>
- Command is 0 for OFF and 1 for ON
+  Usage: ./send <systemCode> <unitCode> <command> [<pulseLength>]
+  Command is 0 for OFF and 1 for ON
+
+  [] = optional
  */
 
 #include "RCSwitch.h"
@@ -18,11 +20,13 @@ int main(int argc, char *argv[]) {
     char* systemCode = argv[1];
     int unitCode = atoi(argv[2]);
     int command  = atoi(argv[3]);
+    int pulseLength = 0;
+    if (argv[4] != NULL) pulseLength = atoi(argv[4]);
     
     if (wiringPiSetup () == -1) return 1;
 	printf("sending systemCode[%s] unitCode[%i] command[%i]\n", systemCode, unitCode, command);
 	RCSwitch mySwitch = RCSwitch();
-	if (argv[4] != NULL) mySwitch.setPulseLength(atoi(argv[4]));
+	if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
 	mySwitch.enableTransmit(PIN);
     
     switch(command) {
