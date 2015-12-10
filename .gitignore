@@ -14,3 +14,9 @@
 *.lai
 *.la
 *.a
+
+# Compiled executables
+RPi_utils/RFSniffer
+RPi_utils/codesend
+RPi_utils/send
+
