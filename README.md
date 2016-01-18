@@ -4,6 +4,8 @@
 
 It consists of two main sections- Arduino sketches and Raspberry Pi command line utilities.  You'll find those in appropriately named folders.
 
+Despite the name, 433Utils also works with 315MHz transmit and receive modules (tested).
+
 ## Requirements
 
 1. An Arduino (two is ideal)
