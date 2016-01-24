@@ -568,7 +568,7 @@ void RCSwitch::handleInterrupt() {
   long time = micros();
   duration = time - lastTime;
 
-  if (duration > 5000 && duration > RCSwitch::timings[0] - 200 && duration < RCSwitch::timings[0] + 200) {    
+  if (duration > 4000 && duration > RCSwitch::timings[0] - 200 && duration < RCSwitch::timings[0] + 200) {    
     repeatCount++;
     changeCount--;
 
@@ -581,7 +581,7 @@ void RCSwitch::handleInterrupt() {
       repeatCount = 0;
     }
     changeCount = 0;
-  } else if (duration > 5000) {
+  } else if (duration > 4000) {
     changeCount = 0;
   }
 
