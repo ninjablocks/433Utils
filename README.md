@@ -25,7 +25,7 @@ Place the Sketches in your normal Arduino Sketches location.  Install any requir
 
 From your RPi, clone this archive:
 
-1. ```git clone --recursive git://github.com/ninjablocks/433Utils.git``` (recursive ensure tht the rc-switch submodule gets populated which is needed by RPi\_utils)
+1. ```git clone --recursive git://github.com/ninjablocks/433Utils.git``` (recursive ensure that the rc-switch submodule gets populated which is needed by RPi\_utils)
 
 2. ```cd 433Kit/RPi\_utils```
 
