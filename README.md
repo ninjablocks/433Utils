@@ -1,6 +1,6 @@
 # About 433Utils
 
-433Kit is a collection of code and documentation designed to assist you in the connection and usage of RF 433MHz transmit and receive modules to/with your Arduino and Rapberry Pi.
+433Utils is a collection of code and documentation designed to assist you in the connection and usage of RF 433MHz transmit and receive modules to/with your Arduino and Rapberry Pi.
 
 It consists of two main sections- Arduino sketches and Raspberry Pi command line utilities.  You'll find those in appropriately named folders.
 
@@ -27,7 +27,7 @@ From your RPi, clone this archive:
 
 1. git clone git://github.com/ninjablocks/433Utils.git
 
-2. cd 433Kit/RPi\_utils
+2. cd 433Utils/RPi\_utils
 
 3. (As per the original rc_switch distribution) Follow the instructions to install the  [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
 After that you can compile the example programs by executing *make*. 
