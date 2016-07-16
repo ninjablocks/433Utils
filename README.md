@@ -25,9 +25,9 @@ Place the Sketches in your normal Arduino Sketches location.  Install any requir
 
 From your RPi, clone this archive:
 
-1. git clone git://github.com/ninjablocks/433Utils.git
+1. ```git clone --recursive git://github.com/ninjablocks/433Utils.git``` (recursive ensure that the rc-switch submodule gets populated which is needed by RPi\_utils)
 
-2. cd 433Kit/RPi\_utils
+2. ```cd 433Kit/RPi\_utils```
 
 3. (As per the original rc_switch distribution) Follow the instructions to install the  [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
 After that you can compile the example programs by executing *make*. 

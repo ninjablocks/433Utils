@@ -8,7 +8,7 @@
   by @justy to provide a handy RF code sniffer
 */
 
-#include "RCSwitch.h"
+#include "../rc-switch/RCSwitch.h"
 #include <stdlib.h>
 #include <stdio.h>
      
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
      if (argv[1] != NULL) pulseLength = atoi(argv[1]);
 
      mySwitch = RCSwitch();
-	 if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
+     if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
      mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
      
     
