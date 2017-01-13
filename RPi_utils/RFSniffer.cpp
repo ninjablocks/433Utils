@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     
         mySwitch.resetAvailable();
       }
-     // usleep(100); 
+      usleep(100); 
   
   }
 
