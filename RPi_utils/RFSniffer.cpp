@@ -12,54 +12,50 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-     
-     
-RCSwitch mySwitch;
- 
 
+RCSwitch mySwitch;
 
 int main(int argc, char *argv[]) {
-  
-     // This pin is not the first pin on the RPi GPIO header!
-     // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
-     // for more information.
-     int PIN = 2;
-     
-     if(wiringPiSetup() == -1) {
-       printf("wiringPiSetup failed, exiting...");
-       return 0;
-     }
 
-     int pulseLength = 0;
-     if (argv[1] != NULL) pulseLength = atoi(argv[1]);
+    // This pin is not the first pin on the RPi GPIO header!
+    // Consult https://projects.drogon.net/raspberry-pi/wiringpi/pins/
+    // for more information.
+    int PIN = 2;
 
-     mySwitch = RCSwitch();
-     if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
-     mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
-     
-    
-     while(1) {
-  
-      if (mySwitch.available()) {
-    
-        int value = mySwitch.getReceivedValue();
-    
-        if (value == 0) {
-          printf("Unknown encoding\n");
-        } else {    
-   
-          printf("Received %i\n", mySwitch.getReceivedValue() );
+    if (wiringPiSetup() == -1) {
+        printf("wiringPiSetup failed, exiting...");
+        return 0;
+    }
+
+    int pulseLength = 0;
+    if (argv[1] != NULL) pulseLength = atoi(argv[1]);
+
+    mySwitch = RCSwitch();
+    if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
+    mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
+
+    while (1) {
+        if (mySwitch.available()) {
+            int value = mySwitch.getReceivedValue();
+
+            if (value == 0) {
+                printf("Unknown encoding\n");
+            } else {
+                printf(
+                        "Received %i (bitlength: %i, delay: %i, protocol: %i, rawdata: %i)\n",
+                        value,
+                        mySwitch.getReceivedBitlength(),
+                        mySwitch.getReceivedDelay(),
+                        mySwitch.getReceivedProtocol(),
+                        mySwitch.getReceivedRawdata()
+                );
+            }
+
+            fflush(stdout);
+            mySwitch.resetAvailable();
         }
-    
-        fflush(stdout);
-        mySwitch.resetAvailable();
-      }
-      usleep(100); 
-  
-  }
-
-  exit(0);
-
-
+        usleep(100);
+    }
+    exit(0);
 }
 
