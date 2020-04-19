@@ -41,7 +41,14 @@ int main(int argc, char *argv[]) {
             if (value == 0) {
                 printf("Unknown encoding\n");
             } else {
-                printf("Received %i\n", value);
+                printf(
+                        "Received %i (bitlength: %i, delay: %i, protocol: %i, rawdata: %i)\n",
+                        value,
+                        mySwitch.getReceivedBitlength(),
+                        mySwitch.getReceivedDelay(),
+                        mySwitch.getReceivedProtocol(),
+                        mySwitch.getReceivedRawdata()
+                );
             }
 
             fflush(stdout);
