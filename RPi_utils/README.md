@@ -15,3 +15,7 @@ It uses wiringPi pin no 2 by default. You may want to change the used GPIO pin b
 
 ## Note
 The 'RF\_Sniffer' code is as yet untested.  It _should_ work, but it is still being tested thoroughly.  It's provided to allow you to start playing with it now.
+
+## cURL
+The HTTP client meant to update the read values to a server use libcurl. It needs to be installed on the Raspberry:
+```sudo apt install libcurl4 --yes```
