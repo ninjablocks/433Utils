@@ -12,11 +12,45 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-     
+
+#include <mqueue.h>
      
 RCSwitch mySwitch;
- 
 
+static mqd_t mqd = -1;
+static struct mq_attr attr;
+
+static int send_value_to_mq(int value)
+{
+  if(mqd == -1)
+  {
+    attr.mq_flags = 0;
+    attr.mq_maxmsg = 10;
+    attr.mq_msgsize = sizeof(int);
+    attr.mq_curmsgs = 0;
+
+    mqd = mq_open("/RFSniffer_MQ", O_WRONLY ,  0777, &attr);
+  }
+  
+  if(mqd == -1) {
+    perror("mq_open");
+    return -1;
+  }
+
+  attr.mq_flags |= O_NONBLOCK;
+  mq_setattr(mqd, &attr, NULL);
+  if(mq_send(mqd,(char*) &value, sizeof(int), 0) == -1)
+  {
+    perror("mq_send: ");
+    mq_close(mqd);
+    mqd = -1;
+    return -1;
+  }
+  attr.mq_flags &= (~O_NONBLOCK);
+  mq_setattr(mqd, &attr, NULL);
+
+  return 0;
+}
 
 int main(int argc, char *argv[]) {
   
@@ -48,14 +82,14 @@ int main(int argc, char *argv[]) {
           printf("Unknown encoding\n");
         } else {    
    
-          printf("Received %i\n", mySwitch.getReceivedValue() );
+          attr.mq_flags |= O_NONBLOCK;
+          send_value_to_mq(value);
         }
     
         fflush(stdout);
         mySwitch.resetAvailable();
       }
-      usleep(100); 
-  
+      usleep(100);
   }
 
   exit(0);
