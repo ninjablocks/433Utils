@@ -85,7 +85,6 @@ struct curl_slist * HttpRequest::GetCurlHeaders()
     for(auto it = m_headers.begin(); it != m_headers.end(); it++)
     {
         string header = it->first + ": " + it->second;
-        cout << "Curl Header ==  " << header << endl;
         headers = curl_slist_append(headers, header.c_str());
     }
     return headers;
@@ -113,7 +112,6 @@ static size_t CurlWrite_CallbackFunc_StdString(void *contents, size_t size, size
     }
     catch(std::bad_alloc &e)
     {
-        //handle memory problem
         return 0;
     }
     return newLength;
@@ -134,9 +132,9 @@ HttpStatusCode HttpClient::DoRequest(HttpRequest& request)
     if(curl)
     {
 
-        string reponse = "";
+        string response = "";
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWrite_CallbackFunc_StdString);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &reponse);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response);
 
         CURLcode res = curl_easy_perform(curl);
       }

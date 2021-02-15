@@ -36,7 +36,7 @@ static int send_value_to_mq(int value)
     perror("mq_open");
     return -1;
   }
-
+  
   attr.mq_flags |= O_NONBLOCK;
   mq_setattr(mqd, &attr, NULL);
   if(mq_send(mqd,(char*) &value, sizeof(int), 0) == -1)
@@ -46,6 +46,7 @@ static int send_value_to_mq(int value)
     mqd = -1;
     return -1;
   }
+
   attr.mq_flags &= (~O_NONBLOCK);
   mq_setattr(mqd, &attr, NULL);
 
@@ -71,6 +72,7 @@ int main(int argc, char *argv[]) {
      if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
      mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
      
+     send_value_to_mq(10);
     
      while(1) {
   
@@ -80,9 +82,7 @@ int main(int argc, char *argv[]) {
     
         if (value == 0) {
           printf("Unknown encoding\n");
-        } else {    
-   
-          attr.mq_flags |= O_NONBLOCK;
+        } else {       
           send_value_to_mq(value);
         }
     

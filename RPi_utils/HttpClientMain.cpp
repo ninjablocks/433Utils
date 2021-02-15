@@ -32,13 +32,13 @@ static void intHandler(int dummy) {
 
 static int32_t send_value_http(int32_t value)
 {
-    HttpClient client("http://192.168.15.9", 8080);
-    HttpRequest req("PUT", "/signal");
+    HttpClient client("http://192.168.15.9", 5000);
+    HttpRequest req("POST", "/value");
     char body[32];
 
     signal(SIGINT, intHandler);
 
-    sprintf(body, "Received %d", value);
+    sprintf(body, "%d", value);
 
     req.AddHeader("Content-Type", "text/*");
     
@@ -78,7 +78,6 @@ int main(int argc, char * argv[])
 
         int value = *((int*)buffer);
         //rfs_message.message.value = 12;
-        printf(" Received message value [%d]\n", value);
 
         send_value_http(value);
 
