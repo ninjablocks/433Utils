@@ -71,9 +71,7 @@ int main(int argc, char *argv[]) {
      mySwitch = RCSwitch();
      if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
      mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
-     
-     send_value_to_mq(10);
-    
+         
      while(1) {
   
       if (mySwitch.available()) {
