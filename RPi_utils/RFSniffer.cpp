@@ -46,6 +46,7 @@ static int send_value_to_mq(int value)
     mqd = -1;
     return -1;
   }
+  printf("Sent value %d\n", value);
 
   attr.mq_flags &= (~O_NONBLOCK);
   mq_setattr(mqd, &attr, NULL);
@@ -71,16 +72,18 @@ int main(int argc, char *argv[]) {
      mySwitch = RCSwitch();
      if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
      mySwitch.enableReceive(PIN);  // Receiver on interrupt 0 => that is pin #2
-         
+
+
      while(1) {
   
       if (mySwitch.available()) {
-    
+        
         int value = mySwitch.getReceivedValue();
-    
+
         if (value == 0) {
           printf("Unknown encoding\n");
         } else {       
+          printf("Received %i\n", value );
           send_value_to_mq(value);
         }
     

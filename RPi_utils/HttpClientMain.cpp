@@ -69,7 +69,7 @@ int main(int argc, char * argv[])
         char *buffer = (char*) calloc (sizeof(int), 10);
         unsigned int priority = 0;
 
-        if ((mq_receive (mqd, buffer, sizeof(int) *10, NULL)) == -1)
+        if ((mq_receive (mqd, buffer, sizeof(int) *50, NULL)) == -1)
         {
             perror ("Failed to receive message\n");
 
@@ -78,6 +78,7 @@ int main(int argc, char * argv[])
 
         int value = *((int*)buffer);
         //rfs_message.message.value = 12;
+        printf("Received value [%d]\n", value);
 
         send_value_http(value);
 
