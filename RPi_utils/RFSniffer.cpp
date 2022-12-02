@@ -42,13 +42,13 @@ int main(int argc, char *argv[]) {
   
       if (mySwitch.available()) {
     
-        int value = mySwitch.getReceivedValue();
+        unsigned long value = mySwitch.getReceivedValue();
     
         if (value == 0) {
           printf("Unknown encoding\n");
         } else {    
    
-          printf("Received %i\n", mySwitch.getReceivedValue() );
+          printf("Received %lu\n", mySwitch.getReceivedValue() );
         }
     
         fflush(stdout);
