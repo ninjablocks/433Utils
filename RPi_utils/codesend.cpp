@@ -51,8 +51,8 @@ int main(int argc, char *argv[]) {
     if (wiringPiSetup () == -1) return 1;
     printf("sending code[%lu]\n", code);
     RCSwitch mySwitch = RCSwitch();
-    if (protocol != 0) mySwitch.setProtocol(protocol);
     if (pulseLength != 0) mySwitch.setPulseLength(pulseLength);
+    if (protocol != 0) mySwitch.setProtocol(protocol);
     mySwitch.enableTransmit(PIN);
     
     mySwitch.send(code, bitLength);
