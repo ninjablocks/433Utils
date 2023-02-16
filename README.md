@@ -31,7 +31,7 @@ From your RPi, clone this archive:
 
 2. ```cd 433Utils/RPi_utils```
 
-3. (As per the original rc_switch distribution) Follow the instructions to install the  [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library.
+3. (As per the original rc_switch distribution) Follow the instructions to install the  [wiringpi](https://projects.drogon.net/raspberry-pi/wiringpi/download-and-install/) library. For Rasbian issue, ```sudo apt-get install wiringpi```
 After that you can compile the example programs by executing *make*. 
 
 ## Usage
